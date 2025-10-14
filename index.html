@@ -1,1 +1,255 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SMKS Islam Malahayati</title>
+  <style>
+    /* Font dan Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
 
+    body {
+      background: linear-gradient(to right, #a0e7e5, #b4f8c8, #f0fdfa);
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(to right, #00bfa6, #00d4ff);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      font-style: italic;
+    }
+
+    /* Menu Navigasi */
+    .menu-toggle {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .menu-toggle div {
+      width: 30px;
+      height: 4px;
+      background: white;
+      margin: 6px 0;
+      transition: 0.4s;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background: #00bfa6;
+      color: white;
+      padding: 2rem 1rem;
+      transition: left 0.3s ease;
+      z-index: 9;
+    }
+
+    nav ul {
+      list-style: none;
+    }
+
+    nav ul li {
+      margin: 1rem 0;
+      cursor: pointer;
+    }
+
+    .active {
+      left: 0;
+    }
+
+    /* Konten Slide */
+    .section {
+      display: none;
+      padding: 2rem;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Testimoni */
+    .testimoni {
+      background: #f0fdfa;
+      padding: 2rem;
+    }
+
+    .testimoni h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .testimoni-card {
+      background: white;
+      border-radius: 10px;
+      padding: 1rem;
+      margin: 1rem auto;
+      max-width: 600px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    /* Formulir Kontak */
+    .kontak-form {
+      background: #e0f7fa;
+      padding: 2rem;
+    }
+
+    .kontak-form h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    form {
+      max-width: 600px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    input, textarea {
+      margin: 0.5rem 0;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 0.8rem;
+      background: #00bfa6;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #009e8a;
+    }
+
+    /* Responsif */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      nav {
+        width: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <h1>SMKS ISLAM MALAHAYATI</h1>
+    <p>Yayasan Bina Bersama Indomas</p>
+  </header>
+
+  <nav id="sidebar">
+    <ul>
+      <li onclick="showSection('beranda')">Beranda</li>
+      <li onclick="showSection('profil')">Profil Sekolah</li>
+      <li onclick="showSection('visi')">Visi dan Misi</li>
+      <li onclick="showSection('program')">Program Sekolah</li>
+      <li onclick="showSection('kontak')">Kontak</li>
+    </ul>
+  </nav>
+
+  <div id="beranda" class="section active">
+    <h2>Selamat Datang di SMKS Islam Malahayati</h2>
+    <p>SMKS Islam Malahayati adalah sekolah menengah kejuruan yang berkomitmen membentuk generasi islami, terampil, dan siap kerja. Berlokasi di bawah naungan Yayasan Bina Bersama Indomas, kami menyediakan pendidikan berkualitas dengan pendekatan modern dan islami.</p>
+  </div>
+
+  <div id="profil" class="section">
+    <h2>Profil Sekolah</h2>
+    <p>SMKS Islam Malahayati berdiri sejak tahun XXXX dan telah meluluskan ribuan siswa yang sukses di dunia kerja maupun pendidikan tinggi. Kami memiliki fasilitas lengkap, tenaga pengajar profesional, dan lingkungan belajar yang kondusif.</p>
+  </div>
+
+  <div id="visi" class="section">
+    <h2>Visi dan Misi</h2>
+    <p><strong>Visi:</strong> Menjadi SMK unggulan yang menghasilkan lulusan islami, kompeten, dan berdaya saing global.</p>
+    <p><strong>Misi:</strong></p>
+    <ul>
+      <li>Menyelenggarakan pendidikan berbasis nilai-nilai Islam.</li>
+      <li>Memberikan pelatihan keterampilan sesuai kebutuhan industri.</li>
+      <li>Mendorong inovasi dan kreativitas siswa.</li>
+    </ul>
+  </div>
+
+  <div id="program" class="section">
+    <h2>Program Keahlian</h2>
+    <ul>
+      <li><strong>TKJ (Teknik Komputer dan Jaringan):</strong> Fokus pada jaringan komputer, server, dan keamanan siber.</li>
+      <li><strong>AKL (Akuntansi dan Keuangan Lembaga):</strong> Pembelajaran akuntansi, pembukuan, dan sistem keuangan.</li>
+      <li><strong>AP (Administrasi Perkantoran):</strong> Keterampilan administrasi, komunikasi bisnis, dan manajemen dokumen.</li>
+    </ul>
+  </div>
+
+  <div id="kontak" class="section">
+    <h2>Kontak Sekolah</h2>
+    <p>Alamat: Jl. Pendidikan No. 123, Jakarta</p>
+    <p>Email: info@smksmalahayati.sch.id</p>
+    <p>Telepon: (021) 12345678</p>
+  </div>
+
+  <div class="testimoni">
+    <h2>Testimoni Alumni</h2>
+    <div class="testimoni-card">
+      <p>"SMKS Islam Malahayati membentuk saya menjadi pribadi yang disiplin dan siap kerja. Terima kasih guru-guru hebat!"</p>
+      <p><strong>- Ahmad, Alumni TKJ 2020</strong></p>
+    </div>
+    <div class="testimoni-card">
+      <p>"Saya diterima di universitas ternama berkat bekal ilmu dari SMKS Islam Malahayati."</p>
+      <p><strong>- Siti, Alumni AKL 2021</strong></p>
+    </div>
+  </div>
+
+  <div class="kontak-form">
+    <h2>Formulir Kontak</h2>
+    <form>
+      <input type="text" placeholder="Nama Lengkap" required />
+      <input type="email" placeholder="Email" required />
+      <textarea rows="5" placeholder="Pesan Anda..." required></textarea>
+      <button type="submit">Kirim</button>
+    </form>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("sidebar").classList.toggle("active");
+    }
+
+    function showSection(id) {
+      const sections = document.querySelectorAll(".section");
+      sections.forEach(sec => sec.classList
